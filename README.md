@@ -6,11 +6,14 @@ In this project a re-implementation of the architecture proposed in the paper [R
 
 ## Results
 
-## Installation (if we want)(dobbiamo vedere un secondo che costruiamo il file di training e testing)
+## Installation 
+(if we want)(dobbiamo vedere un secondo che costruiamo il file di training e testing)
 
-## Run the code (same previous motivation)(if exist installation section)
+## Run the code 
+(same previous motivation)(if exist installation section)
 
-## Testing (same previous motivation)(if exist installation section)
+## Testing 
+(same previous motivation)(if exist installation section)
 
 ## Architecture
 
