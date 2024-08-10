@@ -3,6 +3,8 @@ from PIL import ImageDraw
 import matplotlib.pyplot as plt
 import torch
 import matplotlib.patches as patches
+import os 
+import cv2 
 
 DELTA_X = 0
 DELTA_Y = 1
@@ -159,3 +161,78 @@ def show_image_and_bbox(image, encoding_of_boxes):
     plt.show()
     
     return 
+
+def create_video_from_images(image_folder, output_video_path, frame_rate=30):
+    # Obtain a list of all files in the folder 
+    images = [img for img in os.listdir(image_folder) if img.endswith((".jpg"))]
+    
+    # If the list is empty, exit 
+    if not images:
+        print("La cartella delle immagini è vuota.")
+        return
+    
+    # Read the first image for obtain the video's dimension
+    first_image_path = os.path.join(image_folder, images[0])
+    frame = cv2.imread(first_image_path)
+    height, width, layers = frame.shape
+
+    # Define codec and create VideoWriter object 
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    video = cv2.VideoWriter(output_video_path, fourcc, frame_rate, (width, height))
+    
+    # Add all images on video
+    for image in images:
+        image_path = os.path.join(image_folder, image)
+        frame = cv2.imread(image_path)
+        video.write(frame)
+    
+    #Release the object 
+    video.release()
+    print(f"Video creato con successo: {output_video_path}")
+
+
+def create_images_from_video(video_path, output_dir, ):
+    # Create the directory if it doesn't exist
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    # Open the video file
+    cap = cv2.VideoCapture(video_path)
+
+    frame_count = 0
+    while True:
+        # Read a frame from the video
+        ret, frame = cap.read()
+
+        # If no frame is read (end of the video), break the loop
+        if not ret:
+            break
+
+        # Construct the file name for the image
+        image_path = os.path.join(output_dir, f"frame_{frame_count}.jpg")
+
+        # Save the frame as a JPEG file
+        cv2.imwrite(image_path, frame)
+
+        # Increment the frame count
+        frame_count += 1
+
+    # Release the video capture object
+    cap.release()
+
+    print(f'Extracted {frame_count} frames and saved to {output_dir}')
+
+
+#Return a list of path images from folder_path
+def process_images_from_folder(folder_path):
+    file_list = os.listdir(folder_path)
+    
+    image_list = [f for f in file_list if f.endswith(('.png', '.jpg', '.jpeg', '.bmp', '.tiff'))]
+    image_list.sort()
+    list_complete = []
+    
+    for l in image_list: 
+        complete_path = os.path.join(folder_path,l)
+        list_complete.append(complete_path)
+    
+    return list_complete
