@@ -1,13 +1,16 @@
 # YOLOv8 Implementation From Scratch for Car Detection
 
 In this project, we re-implemented the YOLOv8 architecture by [Ultralytics](https://docs.ultralytics.com/models/yolov8/), using it for car detection.
+
 <img src="images/car-detection.jpeg" alt="car_detection" width="393" height="219">
 
 
 ## Project description
-We reimplemented the YOLOv8 architecture completely from scratch and used it for car detection.
-<img src="images/yolo-v8-introduction.png" alt="yolo-v8-intro" width="600" height="462">
-YOLOv8 is the eighth iteration of the YOLO (You Only Look Once) series, which is a popular family of real-time object detection models. YOLOv8 builds on the advancements made in previous versions, offering improved performance in terms of speed and accuracy. YOLO models are well-regarded for their efficiency, making them popular choices for applications ranging from autonomous vehicles to video surveillance and more.
+We reimplemented the YOLOv8 architecture completely from scratch and used it for car object detection. Object detection is a computer vision task that involves identifying and locating objects within an image or video. It goes beyond simply recognizing what objects are present (object classification) by also determining where these objects are situated.
+
+<img src="images/yolo-v8-introduction.png" alt="yolo-v8-intro" width="500" height="362">
+
+YOLO models are well-regarded for their efficiency, making them popular choices for applications ranging from autonomous vehicles to video surveillance and more. YOLOv8 is the eighth iteration of the YOLO (You Only Look Once) series, which is a popular family of real-time object detection models. YOLOv8 builds on the advancements made in previous versions, offering improved performance in terms of speed and accuracy.
 
 ## Dataset
 
@@ -21,16 +24,6 @@ Since the test (validation?) set has no ground truth, we used a [software](https
 ## Results
 (image)
 (description of the image)
-
-## Installation 
-(if we want)(dobbiamo vedere un secondo che costruiamo il file di training e testing)
-
-## Run the code 
-(same previous motivation)(if exist installation section)
-
-## Testing 
-(same previous motivation)(if exist installation section)
-
 
 ## Metrics for Evaluation
 
@@ -170,7 +163,6 @@ $$
 - $\rho$: diagonal lenght of the smallest enclosing box coverting the predicted and ground truth bbox.
 
 
-
 ## Architecture
 ### Building Blocks 
 
@@ -242,6 +234,17 @@ Each of the building blocks has an identifier within the architecture. Note that
 - The first Detect block, connected to Block 15, specializes in detecting small objects, utilizing a smaller grid size.
 - The second Detect block, connected to Block 18, focuses on detecting medium-sized objects.
 - The third Detect block, connected to Block 21, is designed to detect large objects, utilizing a larger grid size.
+
+
+## Installation 
+(if we want)(dobbiamo vedere un secondo che costruiamo il file di training e testing)
+
+## Run the code 
+(same previous motivation)(if exist installation section)
+
+## Testing 
+(same previous motivation)(if exist installation section)
+
 
 ## Acknowledgments
 
