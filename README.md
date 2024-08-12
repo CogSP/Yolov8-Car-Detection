@@ -35,7 +35,7 @@ $$
 IoU = \frac{Intersection Area}{Union Area}
 $$
 
-<img src="images/iou.png" alt="IoU" width="170" height="457">
+<img src="images/iou.png" alt="IoU" width="447" height="213">
 
 ### Average Precision
 
