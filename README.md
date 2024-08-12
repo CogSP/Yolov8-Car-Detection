@@ -1,11 +1,13 @@
 # YOLOv8 Implementation From Scratch for Car Detection
 
 In this project, we re-implemented the YOLOv8 architecture by [Ultralytics](https://docs.ultralytics.com/models/yolov8/), using it for car detection.
-
 <img src="images/car-detection.jpeg" alt="car_detection" width="393" height="219">
 
+
 ## Project description
-We reimplemented the YOLOv8 (You Only Look Once) architecture completely from scratch and used it for car detection.
+We reimplemented the YOLOv8 architecture completely from scratch and used it for car detection.
+<img src="images/yolo-v8-introduction.png" alt="yolo-v8-intro" width="600" height="462">
+YOLOv8 is the eighth iteration of the YOLO (You Only Look Once) series, which is a popular family of real-time object detection models. YOLOv8 builds on the advancements made in previous versions, offering improved performance in terms of speed and accuracy. YOLO models are well-regarded for their efficiency, making them popular choices for applications ranging from autonomous vehicles to video surveillance and more.
 
 ## Dataset
 
@@ -241,4 +243,9 @@ Each of the building blocks has an identifier within the architecture. Note that
 - The second Detect block, connected to Block 18, focuses on detecting medium-sized objects.
 - The third Detect block, connected to Block 21, is designed to detect large objects, utilizing a larger grid size.
 
-## Repository Content
+## Acknowledgments
+
+- Yolov8 real time detection paper
+- Original Yolov8 paper (?)
+- Ultralytics website (?)
+- Some youtube videos and websites (?)
