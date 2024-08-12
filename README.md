@@ -18,6 +18,146 @@ We reimplemented the YOLOv8 (You Only Look Once) architecture completely from sc
 ## Testing 
 (same previous motivation)(if exist installation section)
 
+
+## Metrics for Evaluation
+
+We quantitavely test the model using two metrics:
+- Average Precision
+- IoU for each bounding box.
+
+The average precision is not so relevant in our case, since we have only one class to predict and generally 1 or few bounding boxes 
+
+### Intersection over Union
+
+IoU is a quantitative metric used to evaluate the alignment between ground-truth and predicted boxes. It is calculated by dividing the area of overlap between the two boxes by the area of their union. A higher IoU indicates a more accurate prediction.
+
+$$
+IoU = \frac{Intersection Area}{Union Area}
+$$
+
+<img src="images/iou.png" alt="IoU" width="170" height="457">
+
+### Average Precision
+
+$$
+AP = \sum_{k = 0}^{n-1} [R(k) - R(k+1)] P(k)
+$$
+
+With $n$ number of thresholds and $R(n) = 0)$, $P(n) = 1$. 
+
+To compute the AP, we need to:
+1. Generate the prediction scores using the model.
+2. Convert the prediction scores to class labels.
+3. Calculate the precision and recall metrics.
+4. Create the precision-recall curve.
+5. Measure the average precision.
+
+Having only 1 class, the AP is equal to the mAP (mean Average Precision).
+
+## Loss Function used
+We have tried two different losses: the Yolov8 loss, and a YOLOv1-like loss, opting eventually for using the latter.
+
+### Yolo-v1 Loss Calculation
+
+We have modified the classic Yolo-v1 loss, adding a cls loss calculation term also for no-object cell. Given position $(x,y)$ for each cell of the grid, we have that the loss is: 
+
+$$
+\sum_{x,y} (L_{obj} + \lambda_{no-obj}L_{no-obj})
+$$
+
+
+Where the loss function used when a cell contains an object is:
+
+$$
+L_{obj} = \lambda_{coord}L_{obj-box} + L_{obj-conf} + L_{obj-class} 
+$$
+
+With: 
+
+$$
+L_{obj-box} = (\hat{\Delta{x}} - \Delta{x})^2 + (\hat{\Delta{y}} - \Delta{y})^2 + (\sqrt{\hat{\Delta{w}}} - \sqrt{\Delta{w}})^2 + (\sqrt{\hat{\Delta{h}}} - \sqrt{\Delta{h}})^2
+$$
+
+$$
+L_{obj-conf} = (\hat{{C}} - {C})^2 
+$$
+
+$$
+L_{obj-cls} = (\hat{p} - {p})^2 
+$$
+
+with $C = 1$ and $p = 1$
+
+While the loss function used when a cell does not contain an object is:
+
+$$
+L_{no-obj} = L_{no-obj-conf} + L_{no-obj-class}
+$$
+
+With analogous expression for the class and confidence losses, with the only difference of $C = 0$ and $p = 0$
+
+#### Yolo-v1 Loss Hyperparameters
+
+* `LAMBDA_COORD`: when > 1 it puts more importance on box parameters than cls and confidence
+* `LAMBDA_NO_OBJ`: when < 1 it puts more importance on grid cells that contain object than cells which don't
+
+### Yolo-v8 Loss Calculation
+Just for reference, we put the description of the YOLOv8 loss function, although we decided eventually to not use it:
+
+$$
+\displaystyle\sum_{x,y} \frac{\lambda_{box}}{N_{pos}}L_{box} + \frac{\lambda_{cls}}{N_{pos}}L_{cls} + \frac{\lambda_{dfl}}{N_{pos}}L_{dfl} + \phi||\theta||_2^2
+$$
+
+Where:
+
+$$
+L_{box} = 1_{c}[1 - q_{x,y} + \frac{||b_{x,y} - \hat{b_{x,y}}||}{\rho^2} + \alpha_{x,y}v_{x,y}]
+$$
+
+
+
+$$
+L_{cls} = \sum_{c \in classes}y_c\log(\hat{y_c}) + (1- y_c)\log(1 - \hat{y_c})
+$$
+
+$$
+L_{dfl} = 1_{c}[- (q_{(x,y) + 1} - q_{x,y})\log(\hat{q_{x,y}}) + (q_{x,y} - q_{(x,y) - 1})\log(\hat{q_{(x,y) + 1}})]
+$$
+
+
+
+With:
+
+$$
+q_{x,y} = IoU_{x,y} = \frac{\hat{\beta_{x,y}} \cap \beta_{x,y}}{\hat{\beta_{x,y}} \cup \beta_{x,y}}
+$$
+
+$$
+v_{x,y} = \frac{4}{\pi^2}(\arctan(\frac{w_{x,y}}{h_{x,y}}) - \arctan(\frac{\hat{w_{x,y}}}{\hat{h_{x,y}}}))^2
+$$
+
+
+$$
+\alpha_{x,y} = \frac{v_{x,y}}{1 - q_{x,y}}
+$$
+
+$$
+\hat{q}_{x,y} = softmax()
+$$
+
+- $N_{pos}$: number of cells containing an object
+- $1_{c*_{x,y}}$: indicator function, 1 when the cell $(x,y)$ contains an object, 0 otherwise.
+- $\beta_{x,y}$: the ground truth bbox
+- $\hat{\beta}_{x,y}$: the predicted bbox
+- $b_{x,y}$: central point of the ground truth bbox
+- $b_{x,y}$: central point of the predicted bbox
+- $y_c$: ground truth label for class c
+- $q_{(x,y)+1}$ and $q_{(x,y)-1}$: nearest predicted boxes IoUs
+- $w_{x,y}$ and $h_{x,y}$: width and height of the bbox
+- $\rho$: diagonal lenght of the smallest enclosing box coverting the predicted and ground truth bbox.
+
+
+
 ## Architecture
 ### Building Blocks 
 
