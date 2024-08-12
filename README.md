@@ -22,7 +22,7 @@ We reimplemented the YOLOv8 (You Only Look Once) architecture completely from sc
 ### Building Blocks 
 
 #### Convolutional Block
-TODO ADD IMAGE 
+<img src="images/convblock.png" alt="ConvBlock" width="170" height="457">
 
 It is the most basic block in the architecture, comprising a Conv2d layer, a BatchNorm2d layer, and the SiLU activation function.
 
@@ -39,19 +39,19 @@ It is the most basic block in the architecture, comprising a Conv2d layer, a Bat
 
 
 #### Bottleneck Block
-TODO ADD IMAGE
+<img src="images/bottleneck.png" alt="ConvBlock" width="170" height="457">
 
 The bottleneck block consists of two Conv Blocks and an optional shortcut connection. When the shortcut is enabled, it provides a direct path that bypasses the Conv Blocks, also known as residual connection, that allows the gradient to flow more easily through the network during training, addressing the vanishing gradient problem and allowing the model to choose to use the identity mapping provided by the shortcut, making it easier to learn the identity function when needed. 
 
 
 #### C2f Block:
-TODO ADD IMAGE
+<img src="images/c2f.png" alt="ConvBlock" width="314" height="383">
 
 The C2f block begins with a convolutional block, after which the resulting feature map is split. One portion of the feature map is directed to a Bottleneck block, while the other bypasses it and goes straight to the Concat block. The number of Bottleneck blocks used within the C2f block is determined by the model's depth_multiple parameter. Finally, the output from the Bottleneck block is concatenated with the bypassed feature map, and this combined output is fed into a concluding convolutional block.
 
 
 #### SPPF Block
-TODO ADD IMAGE
+<img src="images/sppf.png" alt="ConvBlock" width="320" height="763">
 
 The SPPF (Spatial Pyramid Pooling Fast) Block consists of an initial convolutional block followed by three MaxPool2d layers. The feature maps produced by these MaxPool2d layers plus the output of the initial conv block are then concatenated and passed through a final convolutional block. The core idea of Spatial Pyramid Pooling (SPP) is to divide the input image into a grid, pooling features from each grid cell independently. This allows the network to effectively handle images of varying sizes by capturing multi-scale information, which is especially useful for tasks like object recognition, where objects may appear at different scales within an image.
 
@@ -62,7 +62,7 @@ The MaxPool2d layers in this block are responsible for downsampling the spatial 
 The main function of the SPPF block is to generate a fixed feature representation of objects in various sizes within an image, without needing to resize the image or losing spatial information.
 
 #### Detect Block
-TODO ADD IMAGE
+<img src="images/detect.png" alt="ConvBlock" width="622" height="192">
 
 The Detect Block in YOLOv8 handles object detection using an anchor-free approach, predicting object centers directly rather than relying on anchor boxes. This streamlines the process by reducing the number of box predictions and speeding up post-processing
 
@@ -72,7 +72,7 @@ The Detect Block in YOLOv8 handles object detection using an anchor-free approac
 
 Now that we've explained the individual blocks, let's introduce the overall architecture of YOLOv8.
 
-TODO ADD IMAGE
+<img src="images/yolo-v8-architecture.png" alt="ConvBlock" width="1001" height="913">
 
 The architecture consists of three main sections: Backbone, Neck, and Head.
 
