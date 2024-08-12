@@ -27,10 +27,7 @@ Since the test set has no ground truth, we used a [software](https://annotate.ph
 
 ## Metrics for Evaluation
 
-We quantitavely test the model using two metrics:
-- Average Precision
-- IoU for each bounding box.
-
+We quantitavely test the model using IoU for each bounding box come metric:
 The average precision is not so relevant in our case, since we have only one class to predict and generally 1 or few bounding boxes 
 
 ### Intersection over Union
