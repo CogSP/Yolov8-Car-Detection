@@ -27,7 +27,9 @@ Since the test set has no ground truth, we used a [software](https://annotate.ph
 ## Metrics for Evaluation
 
 We quantitavely test the model using IoU for each bounding box come metric.
-The average precision is not so relevant in our case, since we have only one class to predict and generally 1 or few bounding boxes 
+The average precision is not so relevant in our case, since we have only one class to predict and generally 1 or few bounding boxes. 
+
+if you want a more complete description, look at the ReadMe in the notebook folder.
 
 ## Installation 
 (if we want)(dobbiamo vedere un secondo che costruiamo il file di training e testing)
