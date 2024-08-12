@@ -1,3 +1,28 @@
+### Intersection over Union
+
+IoU is a quantitative metric used to evaluate the alignment between ground-truth and predicted boxes. It is calculated by dividing the area of overlap between the two boxes by the area of their union. A higher IoU indicates a more accurate prediction.
+
+$$
+IoU = \frac{Intersection Area}{Union Area}
+$$
+
+<img src="images/iou.png" alt="IoU" width="447" height="213">
+
+### Average Precision
+
+$$
+AP = \sum_{k = 0}^{n-1} [R(k) - R(k+1)] P(k)
+$$
+
+With $n$ number of thresholds and $R(n) = 0)$, $P(n) = 1$. 
+
+To compute the AP, we need to:
+1. Generate the prediction scores using the model.
+2. Convert the prediction scores to class labels.
+3. Calculate the precision and recall metrics.
+4. Create the precision-recall curve.
+5. Measure the average precision.
+
 Having only 1 class, the AP is equal to the mAP (mean Average Precision).
 
 ## Loss Function used
