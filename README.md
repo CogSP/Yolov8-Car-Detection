@@ -1,6 +1,8 @@
 # YOLOv8 Implementation From Scatch 
 
-In this project, we re-implement the architecture proposed in the paper [Real-Time Flying Object Detection with YOLOv8](https://arxiv.org/pdf/2305.09972), adapting it specifically for car detection in images.
+In this project, we re-implement the YOLOv8 architecture by [Ultralytics](https://docs.ultralytics.com/models/yolov8/), using it for car detection.
+
+<img src="images/iou.png" alt="IoU" width="447" height="213">
 
 ## Project description
 We reimplemented the YOLOv8 (You Only Look Once) architecture completely from scratch and used it for car detection.
