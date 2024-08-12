@@ -1,8 +1,8 @@
-# YOLOv8 Implementation From Scatch 
+# YOLOv8 Implementation From Scratch for Car Detection
 
-In this project, we re-implement the YOLOv8 architecture by [Ultralytics](https://docs.ultralytics.com/models/yolov8/), using it for car detection.
+In this project, we re-implemented the YOLOv8 architecture by [Ultralytics](https://docs.ultralytics.com/models/yolov8/), using it for car detection.
 
-<img src="images/iou.png" alt="IoU" width="447" height="213">
+<img src="images/car-detection.jpeg" alt="car_detection" width="393" height="219">
 
 ## Project description
 We reimplemented the YOLOv8 (You Only Look Once) architecture completely from scratch and used it for car detection.
