@@ -7,6 +7,15 @@ In this project, we re-implemented the YOLOv8 architecture by [Ultralytics](http
 ## Project description
 We reimplemented the YOLOv8 (You Only Look Once) architecture completely from scratch and used it for car detection.
 
+## Dataset
+
+We used the Kaggle ["Car Object Detection"](https://www.kaggle.com/datasets/sshikamaru/car-object-detection) dataset. The dataset, containing images of cars in all views, is originally divided in training and test set, and contains a csv with the label $(id, x_{max}, y_{max}, x_{min}, y_{min})$ for the training.
+
+<img src="images/dataset1.png" alt="dataset" width="540" height="540">
+
+### Annotation of the Test Set (SHOULD WE CALL IT VALIDATION?)
+Since the test (validation?) set has no ground truth, we used a [software](https://annotate.photo/) to annotate it, getting the ground truth values in JSON format. We then wrote a simple parser in order to obtain the encoded ground truth, that we can compare with the model predictions.  
+
 ## Results
 (image)
 (description of the image)
