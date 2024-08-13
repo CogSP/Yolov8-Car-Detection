@@ -12,7 +12,15 @@ We reimplemented the YOLOv8 architecture completely from scratch and used it for
 YOLO models are well-regarded for their efficiency, making them popular choices for applications ranging from autonomous vehicles to video surveillance and more. YOLOv8 is the eighth iteration of the YOLO (You Only Look Once) series, which is a popular family of real-time object detection models. YOLOv8 builds on the advancements made in previous versions, offering improved performance in terms of speed and accuracy.
 
 ## Results
-(image)
+<p align="center">
+  <img src="images/result1" alt="Descrizione 1" width="200"/>
+  <img src="images/result2" alt="Descrizione 2" width="200"/>
+</p>
+<p align="center">
+  <img src="images/result3" alt="Descrizione 3" width="200"/>
+  <img src="images/result4" alt="Descrizione 4" width="200"/>
+</p>
+
 (description of the image)
 
 ## Dataset
