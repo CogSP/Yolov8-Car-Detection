@@ -12,24 +12,33 @@ We reimplemented the YOLOv8 architecture completely from scratch and used it for
 YOLO models are well-regarded for their efficiency, making them popular choices for applications ranging from autonomous vehicles to video surveillance and more. YOLOv8 is the eighth iteration of the YOLO (You Only Look Once) series, which is a popular family of real-time object detection models. YOLOv8 builds on the advancements made in previous versions, offering improved performance in terms of speed and accuracy.
 
 ## Results
-(image)
-(description of the image)
+As follow you can see the model's results:
+
+<p align="left">
+  <img src="images/Result1.png" alt="Result 1" width="400"/>
+  <img src="images/Result2.png" alt="Result 2" width="400"/>
+</p>
+<p align="left">
+  <img src="images/Result3.png" alt="Result 3" width="400"/>
+  <img src="images/Result4.png" alt="Result 4" width="400"/>
+</p>
+
+The model's results are shown above, demonstrating various scenarios, from single to multiple detections within an image. The predictions closely align with the ground truth.
 
 ## Dataset
 
-We used the Kaggle ["Car Object Detection"](https://www.kaggle.com/datasets/sshikamaru/car-object-detection) dataset. The dataset, containing images of cars in all views, is originally divided in training and test set, and contains a csv with the label $(id, x_{max}, y_{max}, x_{min}, y_{min})$ for the training.
+We used the Kaggle [Car Object Detection](https://www.kaggle.com/datasets/sshikamaru/car-object-detection) dataset. The dataset, containing images of cars in all views, is originally divided in training and test set, and contains a csv with the label $(id, x_{max}, y_{max}, x_{min}, y_{min})$ for the training.
 
 <img src="images/dataset1.png" alt="dataset" width="540" height="540">
 
-### Annotation of the Test Set
-Since the test set has no ground truth, we used a [software](https://annotate.photo/) to annotate it, getting the ground truth values in JSON format. We then wrote a simple parser in order to obtain the encoded ground truth, that we can compare with the model predictions.  
+#### Annotation of the Test Set
+Since the test set has no ground truth, we used a [Software](https://annotate.photo/) to annotate it, getting the ground truth values in JSON format. We then wrote a simple parser in order to obtain the encoded ground truth, that we can compare with the model predictions.  
 
 ## Metrics for Evaluation
 
 We quantitavely test the model using IoU for each bounding box come metric.
 The average precision is not so relevant in our case, since we have only one class to predict and generally 1 or few bounding boxes. 
-
-if you want a more complete description, look at the ReadMe in the notebook folder.
+For more detailed information on the metrics and architecture used, please refer to the ReadMe.md in the notebook folder of this repository.
 
 ## Installation 
 (if we want)(dobbiamo vedere un secondo che costruiamo il file di training e testing)
@@ -43,7 +52,5 @@ if you want a more complete description, look at the ReadMe in the notebook fold
 
 ## Acknowledgments
 
-- Yolov8 real time detection paper
-- Original Yolov8 paper (?)
-- Ultralytics website (?)
-- Some youtube videos and websites (?)
+- [Real-Time Flying Object Detection with YOLOv8](https://arxiv.org/pdf/2305.09972)
+- [Ultralytics Github](https://github.com/ultralytics)
