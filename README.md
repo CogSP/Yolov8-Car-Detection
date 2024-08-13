@@ -38,7 +38,7 @@ Since the test set has no ground truth, we used a [Software](https://annotate.ph
 
 We quantitavely test the model using IoU for each bounding box come metric.
 The average precision is not so relevant in our case, since we have only one class to predict and generally 1 or few bounding boxes. 
-For more detailed information on the metrics and architecture used, please refer to the ReadMe.md in the notebook folder of this repository.
+For more detailed information on the metrics and architecture used, please refer to the [README in the notebook folder](/notebooks/README.md) of this repository.
 
 ## Run the code 
 To start the training phase, you can download and run the [train-yolo.ipynb](https://github.com/CogSP/Yolov8-Car-Detection/blob/main/notebooks/train-yolo.ipynb) notebook.
