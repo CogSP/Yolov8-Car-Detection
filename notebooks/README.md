@@ -159,7 +159,7 @@ The bottleneck block consists of two Conv Blocks and an optional shortcut connec
 
 
 #### C2f Block:
-<img src="../images/c2f.png" alt="ConvBlock" width="314" height="383">
+<img src="../images/c2f.png" alt="ConvBlock" width="314" height="383" style="transform: rotate(90deg);">
 
 The C2f block begins with a convolutional block, after which the resulting feature map is split. One portion of the feature map is directed to a Bottleneck block, while the other bypasses it and goes straight to the Concat block. The number of Bottleneck blocks used within the C2f block is determined by the model's depth_multiple parameter. Finally, the output from the Bottleneck block is concatenated with the bypassed feature map, and this combined output is fed into a concluding convolutional block.
 
