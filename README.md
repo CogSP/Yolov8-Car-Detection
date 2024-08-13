@@ -13,12 +13,12 @@ YOLO models are well-regarded for their efficiency, making them popular choices 
 
 ## Results
 <p align="center">
-  <img src="images/Result1" alt="Result 1" width="200"/>
-  <img src="images/Result2" alt="Result 2" width="200"/>
+  <img src="images/Result1.png" alt="Result 1" width="200"/>
+  <img src="images/Result2.png" alt="Result 2" width="200"/>
 </p>
 <p align="center">
-  <img src="images/Result3" alt="Result 3" width="200"/>
-  <img src="images/Result4" alt="Result 4" width="200"/>
+  <img src="images/Result3.png" alt="Result 3" width="200"/>
+  <img src="images/Result4.png" alt="Result 4" width="200"/>
 </p>
 
 (description of the image)
