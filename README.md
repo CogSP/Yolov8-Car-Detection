@@ -40,14 +40,11 @@ We quantitavely test the model using IoU for each bounding box come metric.
 The average precision is not so relevant in our case, since we have only one class to predict and generally 1 or few bounding boxes. 
 For more detailed information on the metrics and architecture used, please refer to the ReadMe.md in the notebook folder of this repository.
 
-## Installation 
-(if we want)(dobbiamo vedere un secondo che costruiamo il file di training e testing)
-
 ## Run the code 
-(same previous motivation)(if exist installation section)
+(reference to notebook)
 
 ## Testing 
-(same previous motivation)(if exist installation section)
+(reference to notebook) 
 
 
 ## Acknowledgments
