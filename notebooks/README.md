@@ -153,7 +153,7 @@ It is the most basic block in the architecture, comprising a Conv2d layer, a Bat
 
 
 #### Bottleneck Block
-<img src="../images/bottleneck.png" alt="ConvBlock" width="170" height="457">
+<img src="../images/bottleneck.png" alt="ConvBlock" width="400">
 
 The bottleneck block consists of two Conv Blocks and an optional shortcut connection. When the shortcut is enabled, it provides a direct path that bypasses the Conv Blocks, also known as residual connection, that allows the gradient to flow more easily through the network during training, addressing the vanishing gradient problem and allowing the model to choose to use the identity mapping provided by the shortcut, making it easier to learn the identity function when needed. 
 
