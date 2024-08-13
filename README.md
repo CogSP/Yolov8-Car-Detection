@@ -41,7 +41,7 @@ The average precision is not so relevant in our case, since we have only one cla
 For more detailed information on the metrics and architecture used, please refer to the ReadMe.md in the notebook folder of this repository.
 
 ## Run the code 
-(reference to notebook)
+To start the training phase, you can download and run the [train-yolo.ipynb](https://github.com/CogSP/Yolov8-Car-Detection/blob/main/notebooks/train-yolo.ipynb) notebook. If you are working with Kaggle, the dataset used is already available.
 
 ## Testing 
 (reference to notebook) 
