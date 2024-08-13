@@ -136,7 +136,7 @@ $$
 ### Building Blocks 
 
 #### Convolutional Block
-<img src="../images/convblock.png" alt="ConvBlock" width="170" height="457">
+<img src="../images/convblock.png" alt="ConvBlock" width="400">
 
 It is the most basic block in the architecture, comprising a Conv2d layer, a BatchNorm2d layer, and the SiLU activation function.
 
