@@ -176,7 +176,7 @@ The MaxPool2d layers in this block are responsible for downsampling the spatial 
 The main function of the SPPF block is to generate a fixed feature representation of objects in various sizes within an image, without needing to resize the image or losing spatial information.
 
 #### Detect Block
-<img src="../images/detect.png" alt="ConvBlock" width="622" height="192">
+<img src="../images/detect.png" alt="ConvBlock" width="400">
 
 The Detect Block in YOLOv8 handles object detection using an anchor-free approach, predicting object centers directly rather than relying on anchor boxes. This streamlines the process by reducing the number of box predictions and speeding up post-processing
 
