@@ -165,7 +165,7 @@ The C2f block begins with a convolutional block, after which the resulting featu
 
 
 #### SPPF Block
-<img src="../images/sppf.png" alt="ConvBlock" width="320" height="763">
+<img src="../images/sppf.png" alt="ConvBlock" width="400">
 
 The SPPF (Spatial Pyramid Pooling Fast) Block consists of an initial convolutional block followed by three MaxPool2d layers. The feature maps produced by these MaxPool2d layers plus the output of the initial conv block are then concatenated and passed through a final convolutional block. The core idea of Spatial Pyramid Pooling (SPP) is to divide the input image into a grid, pooling features from each grid cell independently. This allows the network to effectively handle images of varying sizes by capturing multi-scale information, which is especially useful for tasks like object recognition, where objects may appear at different scales within an image.
 
