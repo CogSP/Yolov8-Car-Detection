@@ -46,7 +46,7 @@ To start the training phase, you can download and run the [train-yolo.ipynb](htt
 ## Testing 
 To start the testing phase, you can download and run the [test-yolo.ipynb](https://github.com/CogSP/Yolov8-Car-Detection/blob/main/notebooks/test-yolo.ipynb) notebook. 
 
-## Note for train/test phase: 
+ #### Note for train and test phase: 
 
  If you are working with Kaggle, the dataset used is already available.
 
