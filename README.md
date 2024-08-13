@@ -48,7 +48,7 @@ To start the testing phase, you can download and run the [test-yolo.ipynb](https
 
  #### Note for train and test phase: 
 
- If you are working with Kaggle, the dataset used is already available.
+ If you are working with Kaggle, the dataset used is already available in the file and the site automatically download and add it.
 
 
 ## Acknowledgments
