@@ -31,7 +31,7 @@ We used the Kaggle [Car Object Detection](https://www.kaggle.com/datasets/sshika
 
 <img src="images/dataset1.png" alt="dataset" width="540" height="540">
 
-### Annotation of the Test Set
+#### Annotation of the Test Set
 Since the test set has no ground truth, we used a [Software](https://annotate.photo/) to annotate it, getting the ground truth values in JSON format. We then wrote a simple parser in order to obtain the encoded ground truth, that we can compare with the model predictions.  
 
 ## Metrics for Evaluation
