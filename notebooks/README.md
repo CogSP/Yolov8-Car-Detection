@@ -1,3 +1,5 @@
+For evaluate our model we have used the IoU metric. 
+
 ### Intersection over Union
 
 IoU is a quantitative metric used to evaluate the alignment between ground-truth and predicted boxes. It is calculated by dividing the area of overlap between the two boxes by the area of their union. A higher IoU indicates a more accurate prediction.
@@ -7,6 +9,8 @@ IoU = \frac{Intersection Area}{Union Area}
 $$
 
 <img src="../images/iou.png" alt="IoU" width="447" height="213">
+
+For completeness we report also the definition of the Average precision:
 
 ### Average Precision
 
