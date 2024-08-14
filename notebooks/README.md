@@ -31,7 +31,7 @@ Having only 1 class, the AP is equal to the mAP (mean Average Precision).
 
 ## Input Encoding
 
-## Loss Function used
+## Loss Function
 We have tried two different losses: the Yolov8 loss, and a YOLOv1-like loss, opting eventually for using the latter.
 
 ### Yolo-v1 Loss Calculation
