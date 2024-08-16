@@ -19,7 +19,7 @@ As follow you can see the model's results:
   <img src="images/Result2.png" alt="Result 2" width="400"/>
 </p>
 <p align="left">
-  <img src="images/Result3.png" alt="Result 3" width="400"/>
+  <img src="images/Result6.png" alt="Result 3" width="400"/>
   <img src="images/Result4.png" alt="Result 4" width="400"/>
 </p>
 
