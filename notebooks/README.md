@@ -18,7 +18,7 @@ $$
 AP = \sum_{k = 0}^{n-1} [R(k) - R(k+1)] P(k)
 $$
 
-With $n$ number of thresholds and $R(n) = 0)$, $P(n) = 1$. 
+With $n$ number of thresholds and $R(n) = 0$, $P(n) = 1$. 
 
 To compute the AP, we need to:
 1. Generate the prediction scores using the model.
