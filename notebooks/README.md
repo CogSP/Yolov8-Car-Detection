@@ -39,7 +39,7 @@ We have tried two different losses: the Yolov8 loss, and a YOLOv1-like loss, opt
 We have modified the classic Yolo-v1 loss, adding a cls loss calculation term also for no-object cell. Given position $(x,y)$ for each cell of the grid, we have that the loss is: 
 
 $$
-\sum_{x,y} (L_{obj} + \lambda_{no-obj}L_{no-obj})
+\sum_{x,y} (1_i^{obj} \ L_{obj} + \lambda_{no-obj}\  1_i^{no-obj} \ L_{no-obj})
 $$
 
 
@@ -68,7 +68,7 @@ with $C = 1$ and $p = 1$
 While the loss function used when a cell does not contain an object is:
 
 $$
-L_{no-obj} = L_{no-obj-conf} + L_{no-obj-class}
+L_{no-obj} = L_{no-obj-conf} + L_{no-obj-class} + L_{obj-class} 
 $$
 
 With analogous expression for the class and confidence losses, with the only difference of $C = 0$ and $p = 0$
